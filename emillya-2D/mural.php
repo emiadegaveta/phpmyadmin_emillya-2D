@@ -5,7 +5,7 @@ if(isset($_POST['cadastra'])){
     $email = mysqli_real_escape_string($conexao, $_POST['email']);
     $mensagem   = mysqli_real_escape_string($conexao, $_POST['mensagem']);
 
-    $sql = "INSERT INTO usuários (nome, email, mensagem) VALUES ('$nome', '$email', '$mensagem')";
+    $sql = "INSERT INTO usuarios (nome, email, mensagem) VALUES ('$nome', '$email', '$mensagem')";
     mysqli_query($conexao, $sql) or die("Erro ao inserir dados: " . mysqli_error($conexao));
     header("Location: mural.php");
     exit;
@@ -59,9 +59,9 @@ $(document).ready(function() {
 </div>
 
 <?php
-$seleciona = mysqli_query($conexao, "SELECT * FROM usuários ORDER BY id DESC");
+$seleciona = mysqli_query($conexao, "SELECT * FROM usuarios ORDER BY id DESC");
 while($res = mysqli_fetch_assoc($seleciona)){
-    echo '<ul class="usuários">';
+    echo '<ul class="usuarios">';
     echo '<li><strong>ID:</strong> ' . $res['id'] . '</li>';
     echo '<li><strong>Nome:</strong> ' . htmlspecialchars($res['nome']) . '</li>';
     echo '<li><strong>Email:</strong> ' . htmlspecialchars($res['email']) . '</li>';
@@ -71,7 +71,6 @@ while($res = mysqli_fetch_assoc($seleciona)){
 ?>
 
 <div id="footer">
-
 </div>
 </div>
 </div>

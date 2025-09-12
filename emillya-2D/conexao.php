@@ -13,6 +13,10 @@ if (!$conexao) {
     die("Erro ao conectar: " . mysqli_connect_error());
 }
 
-// SENSITIVE CASE suportar acentos e Ç
 mysqli_set_charset($conexao, "utf8");
+
+$cloud_name = "emillya";
+$api_key = "991875817233388";
+$api_secret = "eQtUIrJ5EtMuyznkZ5BnG-WZMW8";
+
 ?>

@@ -1,12 +1,10 @@
 <?php
 include "conexao.php"; 
 if(isset($_POST['cadastra'])){
-
     $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
     $descricao = mysqli_real_escape_string($conexao, $_POST['descricao']);
     $preco = floatval($_POST['preco']);
     $imagem_url = ""; 
-
     if(isset($_FILES['imagem']) && $_FILES['imagem']['error'] == 0){
         $cfile = new CURLFile($_FILES['imagem']['tmp_name'], $_FILES['imagem']['type'], $_FILES['imagem']['name']);
 
@@ -38,14 +36,16 @@ if(isset($_POST['cadastra'])){
         }
     }
 
+  
     if($imagem_url != ""){
-        $sql = "INSERT INTO MUDAR_PRA_SUA (nome, descricao, preco, imagem_url) VALUES ('$nome', '$descricao', $preco, '$imagem_url')";
+        $sql = "INSERT INTO produtos (nome, descricao, preco, imagem_url) VALUES ('$nome', '$descricao', $preco, '$imagem_url')";
         mysqli_query($conexao, $sql) or die("Erro ao inserir: " . mysqli_error($conexao));
     }
 
     header("Location: mural.php");
     exit;
 }
+
 
 ?>
 
@@ -55,6 +55,7 @@ if(isset($_POST['cadastra'])){
 <meta charset="utf-8"/>
 <title>Mural de Produtos</title>
 <link rel="stylesheet" href="style.css"/>
+
 
 </head>
 <body>
@@ -82,7 +83,6 @@ if(isset($_POST['cadastra'])){
             </form>
         </div>
 
-
         <div class="produtos-container">
         <?php
         $seleciona = mysqli_query($conexao, "SELECT * FROM produtos ORDER BY id DESC");
@@ -96,11 +96,12 @@ if(isset($_POST['cadastra'])){
             echo '</div>';
         }
 
+       
         ?>
         </div>
 
         <div id="footer">
-            <p>Mural - Cloudinary & PHP</p>
+            <p>mural da emillya</p>
         </div>
     </div>
 </div>

@@ -1,6 +1,5 @@
 <?php
 include "conexao.php"; 
-
 function deletarImagemCloudinary($public_id, $cloud_name, $api_key, $api_secret) {
     $timestamp = time();
     $string_to_sign = "public_id=$public_id&timestamp=$timestamp$api_secret";
@@ -23,6 +22,7 @@ function deletarImagemCloudinary($public_id, $cloud_name, $api_key, $api_secret)
 
     return json_decode($response, true);
 }
+
 
 if(isset($_GET['excluir'])) {
     $id = intval($_GET['excluir']);
@@ -54,6 +54,7 @@ if(isset($_POST['editar'])) {
     exit;
 }
 
+
 $editar_id = isset($_GET['editar']) ? intval($_GET['editar']) : 0;
 $produtos = mysqli_query($conexao, "SELECT * FROM produtos ORDER BY id DESC");
 
@@ -82,8 +83,8 @@ $produtos = mysqli_query($conexao, "SELECT * FROM produtos ORDER BY id DESC");
                     <p><strong>Descrição:</strong> <?= nl2br(htmlspecialchars($res['descricao'])) ?></p>
                     <p><img src="<?= htmlspecialchars($res['imagem_url']) ?>" alt="<?= htmlspecialchars($res['nome']) ?>"></p>
 
+                
                     <a href="moderar.php?excluir=<?= $res['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
-
 
                     <?php if($editar_id == $res['id']): ?>
                         <form method="post" action="moderar.php">

@@ -56,7 +56,6 @@ if(isset($_POST['cadastra'])){
 <title>Mural de Produtos</title>
 <link rel="stylesheet" href="style.css"/>
 
-
 </head>
 <body>
 <div id="main">

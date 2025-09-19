@@ -15,8 +15,8 @@ if (!$conexao) {
 
 mysqli_set_charset($conexao, "utf8");
 
-$cloud_name = "emillya";
+$cloud_name = "deahcn4bd";
 $api_key = "991875817233388";
-$api_secret = "eQtUIrJ5EtMuyznkZ5BnG-WZMW8";
+$api_secret = "01VoX6AJ0cqhX9O0kS4zCNmPkP0";
 
 ?>

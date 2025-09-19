@@ -5,124 +5,99 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
+    background-image: "hello_kitpurple.jpg";
 }
 
-label {
-    display: block;
-    margin-top: 1rem;
-}
-
-label.error {
-    color: rgb(253, 0, 0);
-    margin: 0 .5em 0 0;
-    font-size: 0.9375rem;
-    vertical-align: top;
-}
-
-p {
-    clear: both;
-}
-
-.submit {
-    margin-top: 1rem;
-}
-
-em {
-    font-weight: bold;
-    padding-right: 1em;
-    vertical-align: top;
+body {
+    background-color: #ffffff;
+    background-image: 
 }
 
 #main {
     width: 500px;
-    margin: 0 auto; 
-}
-
-#geral {
-    width: 500px;
+    margin: 2rem auto; 
     background-color: #6f00ff;
-    float: left;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(111, 0, 255, 0.5);
+    padding: 1.5rem;
+    color: #fff;
 }
 
 #header h1 {
     font-family: "Trebuchet MS", Tahoma, Verdana, "Agency FB", Arial;
-    font-size: 1.5625rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #ffffff;
-    margin: 2rem auto 0;
+    margin-bottom: 0.3rem;
     text-align: center;
 }
 
 #header p {
-    font-size: 0.8125rem;
-    color: #c807f8;
-    margin-left: 5px;
+    font-size: 0.9rem;
+    color: #d19aff;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
-#header a {
-    font-weight: bold;
-    color: #b704f8;
-}
-
-#formulario_mural {
-    text-align: center;
-    float: left;
-    width: 480px;
-    margin-bottom: 1rem;
+form#formulario_mural {
     background-color: #ca04fb;
-    padding: 1rem;
+    padding: 1.5rem;
+    border-radius: 6px;
 }
 
-#mural input,
-#mural textarea {
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+label.error {
+    color: #ff4c4c;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
     width: 100%;
     padding: 0.5rem;
-    margin-top: 0.25rem;
-    border: 1px solid #c391f2;
-    box-sizing: border-box; 
+    border: 2px solid #c391f2;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s;
 }
 
-#mural textarea {
-    height: 90px;
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #ff8d02;
+    outline: none;
+    background-color: #fef4ff;
+    color: #333;
 }
 
-.btn {
-    padding: 0.5rem;
-    width: 100px;
-    border: 1px solid #ff8d02;
-    cursor: pointer;
-    text-align: center;
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+button.btn {
     background-color: transparent;
-    transition: background-color 0.3s, color 0.3s;
+    border: 2px solid #ff8d02;
+    color: #ff8d02;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
 }
 
-.btn:hover {
-    background-color: #333333;
-    color: #999999;
-}
-
-#footer {
-    width: 500px;
-    height: 30px;
-    float: left;
-    background-color: #000000;
-    line-height: 30px;
+.produto img {
     display: block;
-    text-align: center;
-}
-
-#footer p {
-    color: rgba(93, 4, 248, 0.47);
-    padding-left: 1rem;
-}
-
-#footer a {
-    color: rgba(140, 0, 239, 0.41);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-#footer a:hover {
-    color: #ffffff;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 5%
 }

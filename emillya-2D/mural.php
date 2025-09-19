@@ -45,8 +45,6 @@ if(isset($_POST['cadastra'])){
     header("Location: mural.php");
     exit;
 }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +53,14 @@ if(isset($_POST['cadastra'])){
 <meta charset="utf-8"/>
 <title>Mural de Produtos</title>
 <link rel="stylesheet" href="style.css"/>
-
+<style>
+.produto img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+</style>
 </head>
 <body>
 <div id="main">
@@ -94,15 +99,5 @@ if(isset($_POST['cadastra'])){
             echo '<img src="' . htmlspecialchars($res['imagem_url']) . '" alt="' . htmlspecialchars($res['nome']) . '">';
             echo '</div>';
         }
-
-       
         ?>
         </div>
-
-        <div id="footer">
-            <p>mural da emillya</p>
-        </div>
-    </div>
-</div>
-</body>
-</html>      
